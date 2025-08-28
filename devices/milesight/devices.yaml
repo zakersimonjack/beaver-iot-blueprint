@@ -1,0 +1,7 @@
+devices:
+  - id: uc511
+    name: UC511
+    device: uc511/device-template.yaml
+  - id: uc521
+    name: UC521
+    device: uc521/device-template.yaml

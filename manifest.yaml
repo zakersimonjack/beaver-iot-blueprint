@@ -1,0 +1,4 @@
+version: 1.0
+author: beaver-iot
+deviceVendorIndex: devices/vendors.yaml
+solutionIndex: solutions/solutions.yaml

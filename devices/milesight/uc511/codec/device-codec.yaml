@@ -1,0 +1,19 @@
+codecs:
+  - id: ns
+    decoder:
+      chain:
+        - uc511/codec/script1.js
+        - common/flatten.js
+    encoder:
+      chain:
+        - common/unflatten.js
+        - uc511/codec/script1.js
+  - id: 4g
+    decoder:
+      chain:
+        - uc511/codec/script2.js
+        - common/flatten.js
+    encoder:
+      chain:
+        - common/unflatten.js
+        - uc511/codec/script2.js
