@@ -73,6 +73,8 @@ blueprint:
   ref: 'uc511/blueprint/device-blueprint.yaml'
   values:
     arg1:
-      ref: initial_entities[identifier:temperature]
+      type: entity
+      identifier: temperature
     arg2:
-      ref: initial_entities[identifier:humidity]
+      type: entity
+      identifier: humidity
