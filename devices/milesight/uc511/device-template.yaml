@@ -69,6 +69,8 @@ initial_entities:
     value_type: string     # entity value type
     type: property         # entity type
     access_mod: R
+codec:
+  ref: 'uc511/codec/device-codec.yaml'
 blueprint:
   ref: 'uc511/blueprint/device-blueprint.yaml'
   values:
