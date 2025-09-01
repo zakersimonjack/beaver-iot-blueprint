@@ -70,6 +70,7 @@ initial_entities:
     type: property         # entity type
     access_mod: R
 codec:
+  id: 'ns'
   ref: 'uc511/codec/device-codec.yaml'
 blueprint:
   ref: 'uc511/blueprint/device-blueprint.yaml'
