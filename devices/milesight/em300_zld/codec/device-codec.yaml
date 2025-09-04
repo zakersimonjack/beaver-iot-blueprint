@@ -1,0 +1,10 @@
+codecs:
+  - id: default
+    decoder:
+      chain:
+        - em300_zld/codec/decoder.js
+        - common/codec/flatten.js
+    encoder:
+      chain:
+        - common/codec/unflatten.js
+        - em300_zld/codec/encoder.js

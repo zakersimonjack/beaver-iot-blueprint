@@ -1,0 +1,10 @@
+codecs:
+  - id: default
+    decoder:
+      chain:
+        - em310_tilt/codec/decoder.js
+        - common/codec/flatten.js
+    encoder:
+      chain:
+        - common/codec/unflatten.js
+        - em310_tilt/codec/encoder.js

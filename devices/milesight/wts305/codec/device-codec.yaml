@@ -1,0 +1,10 @@
+codecs:
+  - id: default
+    decoder:
+      chain:
+        - wts305/codec/decoder.js
+        - common/codec/flatten.js
+    encoder:
+      chain:
+        - common/codec/unflatten.js
+        - wts305/codec/encoder.js

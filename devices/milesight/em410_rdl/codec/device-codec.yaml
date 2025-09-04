@@ -1,0 +1,10 @@
+codecs:
+  - id: default
+    decoder:
+      chain:
+        - em410_rdl/codec/decoder.js
+        - common/codec/flatten.js
+    encoder:
+      chain:
+        - common/codec/unflatten.js
+        - em410_rdl/codec/encoder.js

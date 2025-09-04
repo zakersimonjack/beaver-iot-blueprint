@@ -1,0 +1,10 @@
+codecs:
+  - id: default
+    decoder:
+      chain:
+        - em320_th/codec/decoder.js
+        - common/codec/flatten.js
+    encoder:
+      chain:
+        - common/codec/unflatten.js
+        - em320_th/codec/encoder.js
