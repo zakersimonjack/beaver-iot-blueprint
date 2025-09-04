@@ -805,7 +805,7 @@ codec:
   id: default
   ref: uc512_di/codec/device-codec.yaml
 blueprint:
-  ref: 'uc512_di/blueprint/device-blueprint.yaml'
+  ref: uc512_di/blueprint/device-blueprint.yaml
   values:
     arg1:
       type: entity

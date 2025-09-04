@@ -2,9 +2,27 @@ codecs:
   - id: default
     decoder:
       chain:
-        - vs132/codec/decoder.js
-        - common/codec/flatten.js
+        - script: vs132/codec/decoder.js
+          entry: Decode
+          args:
+            - id: fPort
+            - id: bytes
+              isPayload: true
+        - script: common/codec/flatten.js
+          entry: process
+          args:
+            - id: obj
+              isPayload: true
     encoder:
       chain:
-        - common/codec/unflatten.js
-        - vs132/codec/encoder.js
+        - script: common/codec/unflatten.js
+          entry: process
+          args:
+            - id: obj
+              isPayload: true
+        - script: vs132/codec/encoder.js
+          entry: Encode
+          args:
+            - id: fPort
+            - id: bytes
+              isPayload: true
