@@ -7,22 +7,22 @@ codecs:
           args:
             - id: fPort
             - id: bytes
-              isPayload: true
+              is_payload: true
         - script: common/codec/flatten.js
           entry: process
           args:
             - id: obj
-              isPayload: true
+              is_payload: true
     encoder:
       chain:
         - script: common/codec/unflatten.js
           entry: process
           args:
             - id: obj
-              isPayload: true
+              is_payload: true
         - script: uc1114/codec/encoder.js
           entry: Encode
           args:
             - id: fPort
             - id: obj
-              isPayload: true
+              is_payload: true

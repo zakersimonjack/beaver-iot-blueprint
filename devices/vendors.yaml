@@ -1,5 +1,5 @@
 vendors:
   - id: milesight-iot
     name: Milesight IoT
-    workDir: devices/milesight-iot # for reusing internal blueprint
-    deviceIndex: devices.yaml
+    work_dir: devices/milesight-iot # for reusing internal blueprint
+    device_index: devices.yaml
