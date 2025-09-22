@@ -813,9 +813,9 @@ definition:
       - key: clear_plan.plan_16
         type: boolean
         entity_mapping: clear_plan.plan_16
-      - key: clear_plan.all
+      - key: clear_plan.reset
         type: boolean
-        entity_mapping: clear_plan.all
+        entity_mapping: clear_plan.reset
 initial_entities:
   - name: TSL Version
     type: property
@@ -2150,13 +2150,13 @@ initial_entities:
             'false': 'no'
             'true': 'yes'
         identifier: plan_16
-      - name: Clear Plan (all)
+      - name: Clear Plan (reset to default)
         value_type: boolean
         attributes:
           enum:
             'false': 'no'
             'true': 'yes'
-        identifier: all
+        identifier: reset
 codec:
   id: default
   ref: wt303/codec/device-codec.yaml

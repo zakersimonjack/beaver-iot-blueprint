@@ -804,12 +804,3 @@ initial_entities:
 codec:
   id: default
   ref: uc512_di/codec/device-codec.yaml
-blueprint:
-  dir: uc512_di/blueprint/
-  values:
-    arg1:
-      type: entity
-      identifier: temperature
-    arg2:
-      type: entity
-      identifier: humidity

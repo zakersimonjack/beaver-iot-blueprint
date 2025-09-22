@@ -56,6 +56,30 @@ definition:
       - key: region_4_occupancy
         type: boolean
         entity_mapping: region_4_occupancy
+      - key: region_5_occupancy
+        type: boolean
+        entity_mapping: region_5_occupancy
+      - key: region_6_occupancy
+        type: boolean
+        entity_mapping: region_6_occupancy
+      - key: region_1_type
+        type: long
+        entity_mapping: region_1_type
+      - key: region_2_type
+        type: long
+        entity_mapping: region_2_type
+      - key: region_3_type
+        type: long
+        entity_mapping: region_3_type
+      - key: region_4_type
+        type: long
+        entity_mapping: region_4_type
+      - key: region_5_type
+        type: long
+        entity_mapping: region_5_type
+      - key: region_6_type
+        type: long
+        entity_mapping: region_6_type
       - key: region_1_out_of_bed_time
         type: long
         entity_mapping: region_1_out_of_bed_time
@@ -68,6 +92,18 @@ definition:
       - key: region_4_out_of_bed_time
         type: long
         entity_mapping: region_4_out_of_bed_time
+      - key: region_5_out_of_bed_time
+        type: long
+        entity_mapping: region_5_out_of_bed_time
+      - key: region_6_out_of_bed_time
+        type: long
+        entity_mapping: region_6_out_of_bed_time
+      - key: respiratory_status
+        type: long
+        entity_mapping: respiratory_status
+      - key: respiratory_rate
+        type: double
+        entity_mapping: respiratory_rate
       - key: report_interval
         type: long
         entity_mapping: report_interval
@@ -116,6 +152,33 @@ definition:
       - key: motion_detection_settings.motionless_time
         type: long
         entity_mapping: motion_detection_settings.motionless_time
+      - key: sleep_detection_config.enable
+        type: boolean
+        entity_mapping: sleep_detection_config.enable
+      - key: sleep_detection_config.start_time
+        type: long
+        entity_mapping: sleep_detection_config.start_time
+      - key: sleep_detection_config.end_time
+        type: long
+        entity_mapping: sleep_detection_config.end_time
+      - key: sleep_detection_config.out_of_bed_enable
+        type: boolean
+        entity_mapping: sleep_detection_config.out_of_bed_enable
+      - key: sleep_detection_config.out_of_bed_time
+        type: long
+        entity_mapping: sleep_detection_config.out_of_bed_time
+      - key: respiratory_detection_config.enable
+        type: boolean
+        entity_mapping: respiratory_detection_config.enable
+      - key: respiratory_detection_config.min
+        type: long
+        entity_mapping: respiratory_detection_config.min
+      - key: respiratory_detection_config.max
+        type: long
+        entity_mapping: respiratory_detection_config.max
+      - key: ai_fall_detection_enable
+        type: boolean
+        entity_mapping: ai_fall_detection_enable
       - key: led_indicator_enable
         type: boolean
         entity_mapping: led_indicator_enable
@@ -152,6 +215,36 @@ definition:
       - key: wifi_ssid_hidden
         type: boolean
         entity_mapping: wifi_ssid_hidden
+      - key: rejoin_config.enable
+        type: boolean
+        entity_mapping: rejoin_config.enable
+      - key: rejoin_config.max_count
+        type: long
+        entity_mapping: rejoin_config.max_count
+      - key: data_rate
+        type: long
+        entity_mapping: data_rate
+      - key: tx_power_level
+        type: long
+        entity_mapping: tx_power_level
+      - key: trigger_digital_output_config.enable
+        type: boolean
+        entity_mapping: trigger_digital_output_config.enable
+      - key: trigger_digital_output_config.fall
+        type: boolean
+        entity_mapping: trigger_digital_output_config.fall
+      - key: trigger_digital_output_config.lying
+        type: boolean
+        entity_mapping: trigger_digital_output_config.lying
+      - key: trigger_digital_output_config.out_of_bed
+        type: boolean
+        entity_mapping: trigger_digital_output_config.out_of_bed
+      - key: trigger_digital_output_config.dwell
+        type: boolean
+        entity_mapping: trigger_digital_output_config.dwell
+      - key: trigger_digital_output_config.motionless
+        type: boolean
+        entity_mapping: trigger_digital_output_config.motionless
   output:
     type: object
     properties:
@@ -212,6 +305,33 @@ definition:
       - key: motion_detection_settings.motionless_time
         type: long
         entity_mapping: motion_detection_settings.motionless_time
+      - key: sleep_detection_config.enable
+        type: boolean
+        entity_mapping: sleep_detection_config.enable
+      - key: sleep_detection_config.start_time
+        type: long
+        entity_mapping: sleep_detection_config.start_time
+      - key: sleep_detection_config.end_time
+        type: long
+        entity_mapping: sleep_detection_config.end_time
+      - key: sleep_detection_config.out_of_bed_enable
+        type: boolean
+        entity_mapping: sleep_detection_config.out_of_bed_enable
+      - key: sleep_detection_config.out_of_bed_time
+        type: long
+        entity_mapping: sleep_detection_config.out_of_bed_time
+      - key: respiratory_detection_config.enable
+        type: boolean
+        entity_mapping: respiratory_detection_config.enable
+      - key: respiratory_detection_config.min
+        type: long
+        entity_mapping: respiratory_detection_config.min
+      - key: respiratory_detection_config.max
+        type: long
+        entity_mapping: respiratory_detection_config.max
+      - key: ai_fall_detection_enable
+        type: boolean
+        entity_mapping: ai_fall_detection_enable
       - key: led_indicator_enable
         type: boolean
         entity_mapping: led_indicator_enable
@@ -221,6 +341,12 @@ definition:
       - key: release_alarm
         type: boolean
         entity_mapping: release_alarm
+      - key: confirm_fall_alarm.alarm_id
+        type: long
+        entity_mapping: confirm_fall_alarm.alarm_id
+      - key: confirm_fall_alarm.action
+        type: long
+        entity_mapping: confirm_fall_alarm.action
       - key: existence_detection_settings.exist_confirm_time
         type: long
         entity_mapping: existence_detection_settings.exist_confirm_time
@@ -275,6 +401,42 @@ definition:
       - key: timestamp
         type: long
         entity_mapping: timestamp
+      - key: time_sync_config.mode
+        type: long
+        entity_mapping: time_sync_config.mode
+      - key: time_sync_config.timestamp
+        type: long
+        entity_mapping: time_sync_config.timestamp
+      - key: rejoin_config.enable
+        type: boolean
+        entity_mapping: rejoin_config.enable
+      - key: rejoin_config.max_count
+        type: long
+        entity_mapping: rejoin_config.max_count
+      - key: data_rate
+        type: long
+        entity_mapping: data_rate
+      - key: tx_power_level
+        type: long
+        entity_mapping: tx_power_level
+      - key: trigger_digital_output_config.enable
+        type: boolean
+        entity_mapping: trigger_digital_output_config.enable
+      - key: trigger_digital_output_config.fall
+        type: boolean
+        entity_mapping: trigger_digital_output_config.fall
+      - key: trigger_digital_output_config.lying
+        type: boolean
+        entity_mapping: trigger_digital_output_config.lying
+      - key: trigger_digital_output_config.out_of_bed
+        type: boolean
+        entity_mapping: trigger_digital_output_config.out_of_bed
+      - key: trigger_digital_output_config.dwell
+        type: boolean
+        entity_mapping: trigger_digital_output_config.dwell
+      - key: trigger_digital_output_config.motionless
+        type: boolean
+        entity_mapping: trigger_digital_output_config.motionless
 initial_entities:
   - name: IPSO Version
     type: property
@@ -361,16 +523,21 @@ initial_entities:
         '0': normal
         '1': motionless
         '2': abnormal
+        '3': lying_down
     identifier: target_status
   - name: Use Time Now
     type: property
     access_mod: R
     value_type: long
+    attributes:
+      unit: s
     identifier: use_time_now
   - name: Use Time Today
     type: property
     access_mod: R
     value_type: long
+    attributes:
+      unit: s
     identifier: use_time_today
   - name: Region 1 Occupancy
     type: property
@@ -378,8 +545,8 @@ initial_entities:
     value_type: boolean
     attributes:
       enum:
-        'false': occupied
-        'true': vacant
+        'false': vacant
+        'true': occupied
     identifier: region_1_occupancy
   - name: Region 2 Occupancy
     type: property
@@ -387,8 +554,8 @@ initial_entities:
     value_type: boolean
     attributes:
       enum:
-        'false': occupied
-        'true': vacant
+        'false': vacant
+        'true': occupied
     identifier: region_2_occupancy
   - name: Region 3 Occupancy
     type: property
@@ -396,8 +563,8 @@ initial_entities:
     value_type: boolean
     attributes:
       enum:
-        'false': occupied
-        'true': vacant
+        'false': vacant
+        'true': occupied
     identifier: region_3_occupancy
   - name: Region 4 Occupancy
     type: property
@@ -405,9 +572,99 @@ initial_entities:
     value_type: boolean
     attributes:
       enum:
-        'false': occupied
-        'true': vacant
+        'false': vacant
+        'true': occupied
     identifier: region_4_occupancy
+  - name: Region 5 Occupancy
+    type: property
+    access_mod: R
+    value_type: boolean
+    attributes:
+      enum:
+        'false': vacant
+        'true': occupied
+    identifier: region_5_occupancy
+  - name: Region 6 Occupancy
+    type: property
+    access_mod: R
+    value_type: boolean
+    attributes:
+      enum:
+        'false': vacant
+        'true': occupied
+    identifier: region_6_occupancy
+  - name: Region 1 Type
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      enum:
+        '0': custom
+        '1': bed
+        '2': door
+        '3': ignore
+        '255': unset
+    identifier: region_1_type
+  - name: Region 2 Type
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      enum:
+        '0': custom
+        '1': bed
+        '2': door
+        '3': ignore
+        '255': unset
+    identifier: region_2_type
+  - name: Region 3 Type
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      enum:
+        '0': custom
+        '1': bed
+        '2': door
+        '3': ignore
+        '255': unset
+    identifier: region_3_type
+  - name: Region 4 Type
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      enum:
+        '0': custom
+        '1': bed
+        '2': door
+        '3': ignore
+        '255': unset
+    identifier: region_4_type
+  - name: Region 5 Type
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      enum:
+        '0': custom
+        '1': bed
+        '2': door
+        '3': ignore
+        '255': unset
+    identifier: region_5_type
+  - name: Region 6 Type
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      enum:
+        '0': custom
+        '1': bed
+        '2': door
+        '3': ignore
+        '255': unset
+    identifier: region_6_type
   - name: Region 1 Out of Bed Time
     type: property
     access_mod: R
@@ -428,6 +685,33 @@ initial_entities:
     access_mod: R
     value_type: long
     identifier: region_4_out_of_bed_time
+  - name: Region 5 Out of Bed Time
+    type: property
+    access_mod: R
+    value_type: long
+    identifier: region_5_out_of_bed_time
+  - name: Region 6 Out of Bed Time
+    type: property
+    access_mod: R
+    value_type: long
+    identifier: region_6_out_of_bed_time
+  - name: Respiratory Status
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      enum:
+        '1': no_data_input
+        '2': normal
+        '3': tachypnea
+        '4': bradypnea
+        '5': undetectable
+    identifier: respiratory_status
+  - name: Respiratory Rate
+    type: property
+    access_mod: R
+    value_type: double
+    identifier: respiratory_rate
   - name: Reboot
     type: service
     access_mod: W
@@ -509,6 +793,8 @@ initial_entities:
           enum:
             '0': low
             '1': high
+            '2': medium
+            '3': custom
         identifier: sensitivity
   - identifier: fall_detection_settings
     name: Fall Detection (Confirm Time)
@@ -561,6 +847,69 @@ initial_entities:
         attributes:
           unit: min
         identifier: motionless_time
+  - identifier: sleep_detection_config
+    name: Sleep Detection (Enable)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Sleep Detection (Enable)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+      - name: Sleep Detection (Start Time)
+        value_type: long
+        attributes:
+          unit: min
+        identifier: start_time
+      - name: Sleep Detection (End Time)
+        value_type: long
+        attributes:
+          unit: min
+        identifier: end_time
+      - name: Sleep Detection (Out of Bed Enable)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: out_of_bed_enable
+      - name: Sleep Detection (Out of Bed Time)
+        value_type: long
+        attributes:
+          unit: min
+        identifier: out_of_bed_time
+  - identifier: respiratory_detection_config
+    name: Respiratory Detection (Enable)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Respiratory Detection (Enable)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+      - name: Respiratory Detection (Min)
+        value_type: long
+        identifier: min
+      - name: Respiratory Detection (Max)
+        value_type: long
+        identifier: max
+  - name: AI Fall Detection Enable
+    type: property
+    access_mod: RW
+    value_type: boolean
+    attributes:
+      enum:
+        'false': disable
+        'true': enable
+    identifier: ai_fall_detection_enable
   - name: LED Indicator Enable
     type: property
     access_mod: RW
@@ -588,6 +937,22 @@ initial_entities:
         'false': 'no'
         'true': 'yes'
     identifier: release_alarm
+  - identifier: confirm_fall_alarm
+    name: Confirm Fall Alarm (Alarm ID)
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Confirm Fall Alarm (Alarm ID)
+        value_type: long
+        identifier: alarm_id
+      - name: Confirm Fall Alarm (Action)
+        value_type: long
+        attributes:
+          enum:
+            '2': dismiss
+            '3': ignore
+        identifier: action
   - identifier: existence_detection_settings
     name: Existence Detection (Exist Confirm Time)
     type: property
@@ -732,6 +1097,98 @@ initial_entities:
     attributes:
       unit: s
     identifier: timestamp
+  - identifier: time_sync_config
+    name: Time Sync Config (Mode)
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Time Sync Config (Mode)
+        value_type: long
+        attributes:
+          enum:
+            '0': sync_from_gateway
+            '1': manual_sync
+        identifier: mode
+      - name: Time Sync Config (Timestamp)
+        value_type: long
+        attributes:
+          unit: s
+        identifier: timestamp
+  - identifier: rejoin_config
+    name: Rejoin Config (Enable)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Rejoin Config (Enable)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+      - name: Rejoin Config (Max Count)
+        value_type: long
+        identifier: max_count
+  - name: Data Rate
+    type: property
+    access_mod: RW
+    value_type: long
+    identifier: data_rate
+  - name: TX Power Level
+    type: property
+    access_mod: RW
+    value_type: long
+    identifier: tx_power_level
+  - identifier: trigger_digital_output_config
+    name: Trigger Digital Output Config (Enable)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Trigger Digital Output Config (Enable)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+      - name: Trigger Digital Output Config (Fall)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: fall
+      - name: Trigger Digital Output Config (Lying)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: lying
+      - name: Trigger Digital Output Config (Out of Bed)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: out_of_bed
+      - name: Trigger Digital Output Config (Dwell)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: dwell
+      - name: Trigger Digital Output Config (Motionless)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: motionless
 codec:
   id: default
   ref: vs373/codec/device-codec.yaml
