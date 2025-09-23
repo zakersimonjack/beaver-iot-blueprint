@@ -161,9 +161,6 @@ definition:
       - key: d_to_d
         type: long
         entity_mapping: d_to_d
-  output:
-    type: object
-    properties: []
 initial_entities:
   - name: IPSO Version
     type: property

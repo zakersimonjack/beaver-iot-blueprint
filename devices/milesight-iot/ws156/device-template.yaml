@@ -89,9 +89,6 @@ definition:
       - key: button_6_d2d
         type: long
         entity_mapping: button_6_d2d
-  output:
-    type: object
-    properties: []
 initial_entities:
   - name: IPSO Version
     type: property

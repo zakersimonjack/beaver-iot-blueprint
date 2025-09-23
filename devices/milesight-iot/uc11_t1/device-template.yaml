@@ -35,9 +35,6 @@ definition:
       - key: humidity
         type: double
         entity_mapping: humidity
-  output:
-    type: object
-    properties: []
 initial_entities:
   - name: IPSO Version
     type: property

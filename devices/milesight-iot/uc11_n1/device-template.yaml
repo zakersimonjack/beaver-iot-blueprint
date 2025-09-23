@@ -62,9 +62,6 @@ definition:
       - key: adc_2_avg
         type: double
         entity_mapping: adc_2_avg
-  output:
-    type: object
-    properties: []
 initial_entities:
   - name: IPSO Version
     type: property

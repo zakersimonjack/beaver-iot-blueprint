@@ -38,9 +38,6 @@ definition:
       - key: periodic_counter_out
         type: long
         entity_mapping: periodic_counter_out
-  output:
-    type: object
-    properties: []
 initial_entities:
   - name: IPSO Version
     type: property
