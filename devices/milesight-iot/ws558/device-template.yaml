@@ -74,6 +74,30 @@ definition:
   output:
     type: object
     properties:
+      - key: switch_1
+        type: boolean
+        entity_mapping: switch_1
+      - key: switch_2
+        type: boolean
+        entity_mapping: switch_2
+      - key: switch_3
+        type: boolean
+        entity_mapping: switch_3
+      - key: switch_4
+        type: boolean
+        entity_mapping: switch_4
+      - key: switch_5
+        type: boolean
+        entity_mapping: switch_5
+      - key: switch_6
+        type: boolean
+        entity_mapping: switch_6
+      - key: switch_7
+        type: boolean
+        entity_mapping: switch_7
+      - key: switch_8
+        type: boolean
+        entity_mapping: switch_8
       - key: reboot
         type: boolean
         entity_mapping: reboot
@@ -114,7 +138,7 @@ definition:
         type: long
         entity_mapping: delay_task.delay_time
       - key: cancel_delay_task
-        type: boolean
+        type: long
         entity_mapping: cancel_delay_task
       - key: power_consumption_enable
         type: boolean
@@ -206,7 +230,7 @@ initial_entities:
     identifier: current
   - name: Switch 1
     type: property
-    access_mod: R
+    access_mod: RW
     value_type: boolean
     attributes:
       enum:
@@ -215,7 +239,7 @@ initial_entities:
     identifier: switch_1
   - name: Switch 2
     type: property
-    access_mod: R
+    access_mod: RW
     value_type: boolean
     attributes:
       enum:
@@ -224,7 +248,7 @@ initial_entities:
     identifier: switch_2
   - name: Switch 3
     type: property
-    access_mod: R
+    access_mod: RW
     value_type: boolean
     attributes:
       enum:
@@ -233,7 +257,7 @@ initial_entities:
     identifier: switch_3
   - name: Switch 4
     type: property
-    access_mod: R
+    access_mod: RW
     value_type: boolean
     attributes:
       enum:
@@ -242,7 +266,7 @@ initial_entities:
     identifier: switch_4
   - name: Switch 5
     type: property
-    access_mod: R
+    access_mod: RW
     value_type: boolean
     attributes:
       enum:
@@ -251,7 +275,7 @@ initial_entities:
     identifier: switch_5
   - name: Switch 6
     type: property
-    access_mod: R
+    access_mod: RW
     value_type: boolean
     attributes:
       enum:
@@ -260,7 +284,7 @@ initial_entities:
     identifier: switch_6
   - name: Switch 7
     type: property
-    access_mod: R
+    access_mod: RW
     value_type: boolean
     attributes:
       enum:
@@ -269,7 +293,7 @@ initial_entities:
     identifier: switch_7
   - name: Switch 8
     type: property
-    access_mod: R
+    access_mod: RW
     value_type: boolean
     attributes:
       enum:
@@ -372,11 +396,7 @@ initial_entities:
   - name: Cancel Delay Task
     type: service
     access_mod: W
-    value_type: boolean
-    attributes:
-      enum:
-        'false': 'no'
-        'true': 'yes'
+    value_type: long
     identifier: cancel_delay_task
   - name: Power Consumption Enable
     type: property

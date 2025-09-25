@@ -122,9 +122,6 @@ definition:
       - key: temperature_alarm_config.threshold_max
         type: long
         entity_mapping: temperature_alarm_config.threshold_max
-      - key: temperature_alarm_config.threshold_min
-        type: long
-        entity_mapping: temperature_alarm_config.threshold_min
       - key: hibernate_config.enable
         type: boolean
         entity_mapping: hibernate_config.enable
@@ -236,9 +233,6 @@ definition:
       - key: temperature_alarm_config.threshold_max
         type: long
         entity_mapping: temperature_alarm_config.threshold_max
-      - key: temperature_alarm_config.threshold_min
-        type: long
-        entity_mapping: temperature_alarm_config.threshold_min
       - key: hibernate_config.enable
         type: boolean
         entity_mapping: hibernate_config.enable
@@ -647,8 +641,7 @@ initial_entities:
             '3': between
             '4': outside
         identifier: condition
-      - &ref_0
-        name: Temperature Alarm Config (Threshold Min)
+      - name: Temperature Alarm Config (Threshold Min)
         value_type: long
         attributes:
           unit: °C
@@ -658,7 +651,6 @@ initial_entities:
         attributes:
           unit: °C
         identifier: threshold_max
-      - *ref_0
   - identifier: hibernate_config
     name: Hibernate Config (Enable)
     type: property

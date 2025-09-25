@@ -53,9 +53,6 @@ definition:
       - key: sensor_enable.co2
         type: boolean
         entity_mapping: sensor_enable.co2
-      - key: sensor_enable.co2
-        type: boolean
-        entity_mapping: sensor_enable.co2
       - key: report_interval
         type: long
         entity_mapping: report_interval
@@ -325,15 +322,13 @@ initial_entities:
             'false': disable
             'true': enable
         identifier: humidity
-      - &ref_0
-        name: Sensor Enable (CO2)
+      - name: Sensor Enable (CO2)
         value_type: boolean
         attributes:
           enum:
             'false': disable
             'true': enable
         identifier: co2
-      - *ref_0
   - name: Reboot
     type: service
     access_mod: W

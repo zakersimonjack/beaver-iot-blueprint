@@ -149,9 +149,6 @@ definition:
       - key: temperature_alarm_config.threshold_max
         type: long
         entity_mapping: temperature_alarm_config.threshold_max
-      - key: temperature_alarm_config.threshold_min
-        type: long
-        entity_mapping: temperature_alarm_config.threshold_min
       - key: co2_calibration_settings.mode
         type: long
         entity_mapping: co2_calibration_settings.mode
@@ -302,9 +299,6 @@ definition:
       - key: temperature_alarm_config.threshold_max
         type: long
         entity_mapping: temperature_alarm_config.threshold_max
-      - key: temperature_alarm_config.threshold_min
-        type: long
-        entity_mapping: temperature_alarm_config.threshold_min
       - key: co2_calibration_settings.mode
         type: long
         entity_mapping: co2_calibration_settings.mode
@@ -804,8 +798,7 @@ initial_entities:
             '3': between
             '4': outside
         identifier: condition
-      - &ref_0
-        name: Temperature Alarm Config (Threshold Min)
+      - name: Temperature Alarm Config (Threshold Min)
         value_type: long
         attributes:
           unit: °C
@@ -815,7 +808,6 @@ initial_entities:
         attributes:
           unit: °C
         identifier: threshold_max
-      - *ref_0
   - identifier: co2_calibration_settings
     name: CO2 Calibration Settings (Mode)
     type: property

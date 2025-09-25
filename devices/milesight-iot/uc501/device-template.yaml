@@ -239,9 +239,6 @@ definition:
       - key: report_status
         type: boolean
         entity_mapping: report_status
-      - key: clear_history
-        type: boolean
-        entity_mapping: clear_history
       - key: history_enable
         type: boolean
         entity_mapping: history_enable
@@ -260,6 +257,9 @@ definition:
       - key: fetch_history.end_time
         type: long
         entity_mapping: fetch_history.end_time
+      - key: clear_history
+        type: boolean
+        entity_mapping: clear_history
       - key: stop_transmit
         type: boolean
         entity_mapping: stop_transmit
@@ -636,15 +636,6 @@ initial_entities:
         'false': 'no'
         'true': 'yes'
     identifier: report_status
-  - name: Clear History
-    type: service
-    access_mod: W
-    value_type: boolean
-    attributes:
-      enum:
-        'false': 'no'
-        'true': 'yes'
-    identifier: clear_history
   - name: History Enable
     type: property
     access_mod: RW
@@ -693,6 +684,15 @@ initial_entities:
         attributes:
           unit: s
         identifier: end_time
+  - name: Clear History
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: clear_history
   - name: Stop Transmit
     type: service
     access_mod: W
