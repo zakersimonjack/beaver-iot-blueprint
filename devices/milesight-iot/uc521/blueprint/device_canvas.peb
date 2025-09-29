@@ -1,0 +1,369 @@
+version: 1.0
+type: template
+parameters:
+  device_id:
+    type: string
+  sn_entity_id:
+    type: string
+  battery_entity_id:
+    type: string
+  report_interval_entity_id:
+    type: string
+  valve_1_opening_entity_id:
+    type: string
+  valve_1_pulse_entity_id:
+    type: string
+  valve_1_control_entity_id:
+    type: string
+  valve_2_opening_entity_id:
+    type: string
+  valve_2_pulse_entity_id:
+    type: string
+  valve_2_control_entity_id:
+    type: string
+resources:
+  device_canvas:
+    type: device_canvas
+    device_id: {{ Parameters.device_id }}
+    data:
+      name: UC521设备画布
+      widgets:
+        - data:
+            class: data_card
+            type: image
+            name: image
+            defaultRow: 4
+            defaultCol: 4
+            minRow: 1
+            minCol: 2
+            maxRow: 12
+            maxCol: 12
+            config:
+              label: 图片
+              dataType: url
+              url: 'https://beaver-iot.s3.cn-north-1.amazonaws.com.cn/UC521.png'
+            pos:
+              w: 2
+              h: 2
+              minW: 2
+              minH: 1
+              'y': 0
+              'x': 0
+              maxW: 12
+              maxH: 12
+              moved: false
+              static: false
+        - data:
+            class: data_card
+            type: dataCard
+            name: Card
+            defaultRow: 1
+            defaultCol: 1
+            minRow: 1
+            minCol: 1
+            maxCol: 2
+            maxRow: 2
+            config:
+              entity:
+                value: !ref parameters.sn_entity_id
+              title: 设备SN
+            pos:
+              w: 2
+              h: 1
+              'x': 2
+              'y': 0
+              minW: 1
+              maxW: 2
+              minH: 1
+              maxH: 2
+              moved: false
+              static: false
+        - data:
+            class: data_chart
+            type: progress
+            name: Progress
+            defaultRow: 1
+            defaultCol: 2
+            minRow: 1
+            minCol: 1
+            maxRow: 1
+            maxCol: 4
+            config:
+              entity:
+                value: !ref parameters.battery_entity_id
+              title: 电池电量
+              time: 86400000
+              metrics: LAST
+              appearanceIcon:
+                icon: IotBatteryIcon
+                color: '#40c776ff'
+            pos:
+              w: 2
+              h: 1
+              'x': 2
+              'y': 1
+              minW: 1
+              maxW: 4
+              minH: 1
+              maxH: 1
+              moved: false
+              static: false
+        - data:
+            class: operate
+            type: trigger
+            name: Trigger
+            defaultRow: 1
+            defaultCol: 1
+            minRow: 1
+            minCol: 1
+            maxRow: 2
+            maxCol: 2
+            config:
+              entity:
+                value: !ref parameters.valve_1_control_entity_id
+              label: 阀门1控制
+              appearanceIcon:
+                icon: IotSolenoidValveOpenIcon
+            pos:
+              w: 2
+              h: 1
+              'x': 10
+              'y': 0
+              minW: 1
+              maxW: 2
+              minH: 1
+              maxH: 2
+              moved: false
+              static: false
+        - data:
+            class: data_card
+            type: dataCard
+            name: Card
+            defaultRow: 1
+            defaultCol: 1
+            minRow: 1
+            minCol: 1
+            maxCol: 2
+            maxRow: 2
+            config:
+              entity:
+                value: !ref parameters.valve_1_opening_entity_id
+              title: 阀门1开关状态
+              icons:
+                'false':
+                  icon: IotSolenoidValveCloseIcon
+                  color: '#6b7785ff'
+                'true':
+                  icon: IotSolenoidValveOpenIcon
+                  color: '#8e66ffff'
+            pos:
+              w: 2
+              h: 1
+              'x': 4
+              'y': 0
+              minW: 1
+              maxW: 2
+              minH: 1
+              maxH: 2
+              moved: false
+              static: false
+        - data:
+            class: data_card
+            type: dataCard
+            name: Card
+            defaultRow: 1
+            defaultCol: 1
+            minRow: 1
+            minCol: 1
+            maxCol: 2
+            maxRow: 2
+            config:
+              entity:
+                value: !ref parameters.valve_1_pulse_entity_id
+              title: 阀门1瞬时流量
+            pos:
+              w: 2
+              h: 1
+              'x': 6
+              'y': 0
+              minW: 1
+              maxW: 2
+              minH: 1
+              maxH: 2
+              moved: false
+              static: false
+        - data:
+            class: data_card
+            type: dataCard
+            name: Card
+            defaultRow: 1
+            defaultCol: 1
+            minRow: 1
+            minCol: 1
+            maxCol: 2
+            maxRow: 2
+            config:
+              entity:
+                value: !ref parameters.valve_2_opening_entity_id
+              title: 阀门2开关状态
+              icons:
+                'false':
+                  icon: IotSolenoidValveCloseIcon
+                  color: '#6b7785ff'
+                'true':
+                  icon: IotSolenoidValveOpenIcon
+                  color: '#8e66ffff'
+            pos:
+              w: 2
+              h: 1
+              'x': 4
+              'y': 1
+              minW: 1
+              maxW: 2
+              minH: 1
+              maxH: 2
+              moved: false
+              static: false
+        - data:
+            class: data_card
+            type: dataCard
+            name: Card
+            defaultRow: 1
+            defaultCol: 1
+            minRow: 1
+            minCol: 1
+            maxCol: 2
+            maxRow: 2
+            config:
+              entity:
+                value: !ref parameters.valve_2_pulse_entity_id
+              title: 阀门2瞬时流量
+            pos:
+              w: 2
+              h: 1
+              'x': 6
+              'y': 1
+              minW: 1
+              maxW: 2
+              minH: 1
+              maxH: 2
+              moved: false
+              static: false
+        - data:
+            class: operate
+            type: trigger
+            name: Trigger
+            defaultRow: 1
+            defaultCol: 1
+            minRow: 1
+            minCol: 1
+            maxRow: 2
+            maxCol: 2
+            config:
+              entity:
+                value: !ref parameters.valve_2_control_entity_id
+              label: 阀门2控制
+              appearanceIcon:
+                icon: IotSolenoidValveOpenIcon
+            pos:
+              w: 2
+              h: 1
+              'x': 10
+              'y': 1
+              minW: 1
+              maxW: 2
+              minH: 1
+              maxH: 2
+              moved: false
+              static: false
+        - data:
+            class: data_card
+            type: dataCard
+            name: Card
+            defaultRow: 1
+            defaultCol: 1
+            minRow: 1
+            minCol: 1
+            maxCol: 2
+            maxRow: 2
+            config:
+              entity:
+                value: !ref parameters.report_interval_entity_id
+              title: 上报周期
+            pos:
+              w: 2
+              h: 1
+              'x': 8
+              'y': 0
+              minW: 1
+              maxW: 2
+              minH: 1
+              maxH: 2
+              moved: false
+              static: false
+        - data:
+            class: operate
+            type: trigger
+            name: Trigger
+            defaultRow: 1
+            defaultCol: 1
+            minRow: 1
+            minCol: 1
+            maxRow: 2
+            maxCol: 2
+            config:
+              entity:
+                value: !ref parameters.report_interval_entity_id
+              label: 设置上报周期
+              appearanceIcon:
+                icon: SettingsOutlinedIcon
+            pos:
+              w: 2
+              h: 1
+              'x': 8
+              'y': 1
+              minW: 1
+              maxW: 2
+              minH: 1
+              maxH: 2
+              moved: false
+              static: false
+        - data:
+            class: data_chart
+            type: areaChart
+            name: Area
+            defaultRow: 2
+            defaultCol: 2
+            minRow: 1
+            minCol: 2
+            maxRow: 4
+            maxCol: 12
+            fullscreenable: true
+            config:
+              entity:
+                - value: !ref parameters.valve_1_pulse_entity_id
+                - value: !ref parameters.valve_2_pulse_entity_id
+              title: 阀门瞬时流量趋势图
+              time: 86400000
+            pos:
+              w: 12
+              h: 4
+              'x': 0
+              'y': 2
+              minW: 2
+              maxW: 12
+              minH: 1
+              maxH: 4
+              moved: false
+              static: false
+      entity_ids:
+        - !ref parameters.sn_entity_id
+        - !ref parameters.battery_entity_id
+        - !ref parameters.valve_1_control_entity_id
+        - !ref parameters.valve_2_control_entity_id
+        - !ref parameters.valve_1_opening_entity_id
+        - !ref parameters.valve_1_pulse_entity_id
+        - !ref parameters.valve_2_opening_entity_id
+        - !ref parameters.report_interval_entity_id
+        - !ref parameters.valve_2_pulse_entity_id
+      device_ids: []

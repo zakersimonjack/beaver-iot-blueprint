@@ -1,140 +1,68 @@
-version: 1
+version: 1.0
 type: template
 parameters:
-  valve_1_opening_entity_key:
+  device_id:
+    type: string
+  sn_entity_id:
+    type: string
+  battery_entity_id:
+    type: string
+  report_interval_entity_id:
     type: string
   valve_1_opening_entity_id:
-    type: integer
-  valve_1_opening_duration_entity_key:
     type: string
-  valve_1_opening_duration_entity_id:
-    type: integer
-  valve_2_opening_entity_key:
+  valve_1_pulse_entity_id:
     type: string
   valve_2_opening_entity_id:
-    type: integer
-  canvas0_temp_id:
-    type: object
-    properties:
-      widget1:
-        type: string
-      widget2:
-        type: string
-    default:
-      widget1: '0'
-      widget2: '1'
-resources:
-  canvas0:
-    type: device_canvas
-    device_id: {{Parameters.device_id}}
-    data:
-      widgets:
-        - tempId: '{{Parameters.canvas0_temp_id.widget1}}'
-          data:
-            class: data_chart
-            type: areaChart
-            name: Area
-            defaultRow: 2
-            defaultCol: 2
-            minRow: 1
-            minCol: 2
-            maxRow: 4
-            maxCol: 12
-            config:
-              entity:
-                - value: '{{Parameters.valve_1_opening_entity_id}}'
-                  label: Valve1 Open Status
-                  valueType: LONG
-                  description: 'PROPERTY, {{Constants.device_model}}, Valve1'
-                  rawData:
-                    deviceName: {{Constants.device_model}}
-                    integrationName: Milesight Development Platform
-                    entityId: '{{Parameters.valve_1_opening_entity_id}}'
-                    entityAccessMod: R
-                    entityKey: >-
-                      {{Parameters.valve_1_opening_entity_key}}
-                    entityType: PROPERTY
-                    entityName: Valve1 Open Status
-                    entityParentName: Valve1
-                    entityValueAttribute:
-                      unit: '%'
-                      min: 0
-                      max: 100
-                    entityValueType: LONG
-                    entityIsCustomized: false
-                    entityCreatedAt: 1747822184383
-                    entityUpdatedAt: 1747822184383
-              title: Valve 1
-              time: 86400000
-            pos:
-              w: 2
-              h: 2
-              x: 0
-              'y': 0
-              i: '{{Parameters.canvas0_temp_id.widget1}}'
-              minW: 2
-              maxW: 12
-              minH: 1
-              maxH: 4
-              moved: false
-              static: false
-        - tempId: '{{Parameters.canvas0_temp_id.widget2}}'
-          data:
-            class: data_card
-            type: dataCard
-            name: Card
-            defaultRow: 1
-            defaultCol: 1
-            minRow: 1
-            minCol: 1
-            maxCol: 2
-            maxRow: 2
-            config:
-              entity:
-                value: '{{Parameters.valve_2_opening_entity_id}}'
-                label: Valve2 Open Status
-                valueType: LONG
-                description: 'PROPERTY, {{Constants.device_model}}, Valve2'
-                rawData:
-                  deviceName: {{Constants.device_model}}
-                  integrationName: Milesight Development Platform
-                  entityId: '{{Parameters.valve_2_opening_entity_id}}'
-                  entityAccessMod: R
-                  entityKey: {{Parameters.valve_2_opening_entity_key}}
-                  entityType: PROPERTY
-                  entityName: Valve2 Open Status
-                  entityParentName: Valve2
-                  entityValueAttribute:
-                    unit: '%'
-                    min: 0
-                    max: 100
-                  entityValueType: LONG
-                  entityIsCustomized: false
-                  entityCreatedAt: 1747822184444
-                  entityUpdatedAt: 1747822184444
-              title: Valve 2
-              icons:
-                '{{Parameters.valve_2_opening_entity_id}}':
-                  icon: AntEmergencyIcon
-                  color: '#ff0000ff'
-            pos:
-              w: 1
-              h: 1
-              x: 2
-              'y': 0
-              i: '{{Parameters.canvas0_temp_id.widget2}}'
-              minW: 1
-              maxW: 2
-              minH: 1
-              maxH: 2
-              moved: false
-              static: false
-      entity_ids:
-        - '{{Parameters.valve_1_opening_entity_id}}'
-        - '{{Parameters.valve_2_opening_entity_id}}'
+    type: string
+  valve_2_pulse_entity_id:
+    type: string
+  valve_1_task_id_entity_key:
+    type: string
+  valve_1_task_valve_opening_entity_key:
+    type: string
+  valve_1_task_pulse_entity_key:
+    type: string
+  valve_1_task_time_entity_key:
+    type: string
+  valve_2_task_id_entity_key:
+    type: string
+  valve_2_task_valve_opening_entity_key:
+    type: string
+  valve_2_task_pulse_entity_key:
+    type: string
+  valve_2_task_time_entity_key:
+    type: string
 include:
-  workflow:
-    template: workflow.peb
+  device_canvas:
+    template: device_canvas.peb
     parameters:
-      valve_1_opening_entity_key: !ref parameters.valve_1_opening_entity_key
-      valve_1_opening_duration_entity_key: {{Parameters.valve_1_opening_duration_entity_key}}
+      device_id: {{ Parameters.device_id }}
+      sn_entity_id: {{ Parameters.sn_entity_id }}
+      battery_entity_id: {{ Parameters.battery_entity_id }}
+      report_interval_entity_id: {{ Parameters.report_interval_entity_id }}
+      valve_1_opening_entity_id: {{ Parameters.valve_1_opening_entity_id }}
+      valve_1_pulse_entity_id: {{ Parameters.valve_1_pulse_entity_id }}
+      valve_1_control_entity_id: !ref include.valve_controller1.template.resources.workflow.trigger.id
+      valve_2_opening_entity_id: {{ Parameters.valve_2_opening_entity_id }}
+      valve_2_pulse_entity_id: {{ Parameters.valve_2_pulse_entity_id }}
+      valve_2_control_entity_id: !ref include.valve_controller2.template.resources.workflow.trigger.id
+  valve_controller1:
+    template: valve_controller.peb
+    parameters:
+      device_id: {{ Parameters.device_id }}
+      index: 1
+      valve_task_id_entity_key: {{ Parameters.valve_1_task_id_entity_key }}
+      valve_task_valve_opening_entity_key: {{ Parameters.valve_1_task_valve_opening_entity_key }}
+      valve_task_pulse_entity_key: {{ Parameters.valve_1_task_pulse_entity_key }}
+      valve_task_time_entity_key: {{ Parameters.valve_1_task_time_entity_key }}
+  valve_controller2:
+    template: valve_controller.peb
+    parameters:
+      device_id: {{ Parameters.device_id }}
+      index: 2
+      valve_task_id_entity_key: {{ Parameters.valve_2_task_id_entity_key }}
+      valve_task_valve_opening_entity_key: {{ Parameters.valve_2_task_valve_opening_entity_key }}
+      valve_task_pulse_entity_key: {{ Parameters.valve_2_task_pulse_entity_key }}
+      valve_task_time_entity_key: {{ Parameters.valve_2_task_time_entity_key }}
+

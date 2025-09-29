@@ -1,6 +1,0 @@
-version: 1.0
-type: variables
-properties:
-  device_id:
-    type: integer
-    required: true

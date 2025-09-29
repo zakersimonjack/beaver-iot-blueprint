@@ -1582,21 +1582,48 @@ blueprint:
   values:
     device_id:
       type: device_id
+    sn_entity_id:
+      type: entity_id
+      identifier: sn
+    battery_entity_id:
+      type: entity_id
+      identifier: battery
+    report_interval_entity_id:
+      type: entity_id
+      identifier: report_interval
     valve_1_opening_entity_id:
       type: entity_id
       identifier: valve_1_opening
-    valve_1_opening_entity_key:
-      type: entity_key
-      identifier: valve_1_opening
+    valve_1_pulse_entity_id:
+      type: entity_id
+      identifier: valve_1_pulse
     valve_2_opening_entity_id:
       type: entity_id
       identifier: valve_2_opening
-    valve_2_opening_entity_key:
-      type: entity_key
-      identifier: valve_2_opening
-    valve_1_opening_duration_entity_id:
+    valve_2_pulse_entity_id:
       type: entity_id
-      identifier: valve_1_opening_duration
-    valve_1_opening_duration_entity_key:
+      identifier: valve_2_pulse
+    valve_1_task_id_entity_key:
       type: entity_key
-      identifier: valve_1_opening_duration
+      identifier: valve_1_task.task_id
+    valve_1_task_valve_opening_entity_key:
+      type: entity_key
+      identifier: valve_1_task.valve_opening
+    valve_1_task_pulse_entity_key:
+      type: entity_key
+      identifier: valve_1_task.pulse
+    valve_1_task_time_entity_key:
+      type: entity_key
+      identifier: valve_1_task.time
+    valve_2_task_id_entity_key:
+      type: entity_key
+      identifier: valve_2_task.task_id
+    valve_2_task_valve_opening_entity_key:
+      type: entity_key
+      identifier: valve_2_task.valve_opening
+    valve_2_task_pulse_entity_key:
+      type: entity_key
+      identifier: valve_2_task.pulse
+    valve_2_task_time_entity_key:
+      type: entity_key
+      identifier: valve_2_task.time
