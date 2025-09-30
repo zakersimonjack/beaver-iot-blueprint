@@ -366,6 +366,8 @@ initial_entities:
     access_mod: R
     value_type: long
     attributes:
+      min: 0
+      max: 100
       unit: '%'
     identifier: battery
   - name: 阀门1状态
