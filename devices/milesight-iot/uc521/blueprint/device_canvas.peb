@@ -92,7 +92,7 @@ resources:
               entity:
                 value: !ref parameters.battery_entity_id
               title: 电池电量
-              time: 86400000
+              time: 604800000
               metrics: LAST
               appearanceIcon:
                 icon: IotBatteryIcon
@@ -148,14 +148,7 @@ resources:
             config:
               entity:
                 value: !ref parameters.valve_1_opening_entity_id
-              title: 阀门1开关状态
-              icons:
-                'false':
-                  icon: IotSolenoidValveCloseIcon
-                  color: '#6b7785ff'
-                'true':
-                  icon: IotSolenoidValveOpenIcon
-                  color: '#8e66ffff'
+              title: 阀门1开度
             pos:
               w: 2
               h: 1
@@ -205,14 +198,7 @@ resources:
             config:
               entity:
                 value: !ref parameters.valve_2_opening_entity_id
-              title: 阀门2开关状态
-              icons:
-                'false':
-                  icon: IotSolenoidValveCloseIcon
-                  color: '#6b7785ff'
-                'true':
-                  icon: IotSolenoidValveOpenIcon
-                  color: '#8e66ffff'
+              title: 阀门2开度
             pos:
               w: 2
               h: 1

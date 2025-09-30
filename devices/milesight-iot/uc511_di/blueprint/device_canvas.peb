@@ -92,7 +92,7 @@ resources:
               entity:
                 value: !ref parameters.battery_entity_id
               title: 电池电量
-              time: 86400000
+              time: 604800000
               metrics: LAST
               appearanceIcon:
                 icon: IotBatteryIcon

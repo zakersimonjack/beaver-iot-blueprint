@@ -48,8 +48,6 @@ resources:
               exchangePayload:
                 {{ Parameters.valve_task_valve_opening_entity_key }}: '#{properties.node_0[''param_0'']}'
                 {{ Parameters.valve_task_id_entity_key }}: '0'
-                {{ Parameters.valve_task_pulse_entity_key }}: '0'
-                {{ Parameters.valve_task_time_entity_key }}: '0'
       edges:
         - id: edge_0
           type: addable

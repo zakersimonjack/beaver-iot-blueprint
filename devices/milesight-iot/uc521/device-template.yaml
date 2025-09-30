@@ -675,6 +675,8 @@ initial_entities:
     access_mod: R
     value_type: long
     attributes:
+      min: 0
+      max: 100
       unit: '%'
     identifier: battery
   - name: 阀门1类型
@@ -1075,6 +1077,10 @@ initial_entities:
       - name: 阀门1开度
         value_type: long
         identifier: valve_opening
+        attributes:
+          min: 0
+          max: 100
+          unit: '%'
       - name: 持续时间
         value_type: long
         attributes:
@@ -1098,6 +1104,10 @@ initial_entities:
       - name: 阀门2开度
         value_type: long
         identifier: valve_opening
+        attributes:
+          min: 0
+          max: 100
+          unit: '%'
       - name: 持续时间
         value_type: long
         attributes:
