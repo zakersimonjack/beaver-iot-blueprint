@@ -1079,10 +1079,13 @@ initial_entities:
         value_type: long
         attributes:
           unit: min
+          optional: true
         identifier: time
       - name: 脉冲流量
         value_type: long
         identifier: pulse
+        attributes:
+          optional: true
   - identifier: valve_2_task
     name: 阀门2控制
     type: property
@@ -1099,10 +1102,13 @@ initial_entities:
         value_type: long
         attributes:
           unit: min
+          optional: true
         identifier: time
       - name: 脉冲流量
         value_type: long
         identifier: pulse
+        attributes:
+          optional: true
   - name: 清除阀门1脉冲计数
     type: service
     access_mod: W
