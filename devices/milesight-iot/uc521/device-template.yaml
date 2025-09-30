@@ -1077,10 +1077,13 @@ initial_entities:
         value_type: long
         attributes:
           unit: min
+          optional: true
         identifier: time
       - name: Valve 1 Task (Pulse)
         value_type: long
         identifier: pulse
+        attributes:
+          optional: true
   - identifier: valve_2_task
     name: Valve 2 Task (Task ID)
     type: property
@@ -1097,10 +1100,13 @@ initial_entities:
         value_type: long
         attributes:
           unit: min
+          optional: true
         identifier: time
       - name: Valve 2 Task (Pulse)
         value_type: long
         identifier: pulse
+        attributes:
+          optional: true
   - name: Clear Valve 1 Pulse
     type: service
     access_mod: W
