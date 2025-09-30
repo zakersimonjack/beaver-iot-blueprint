@@ -1,0 +1,62 @@
+version: 1.0
+type: template
+parameters:
+  device_id:
+    type: string
+  index:
+    type: string
+  valve_task_valve_status_entity_key:
+    type: string
+  valve_task_sequence_id_entity_key:
+    type: string
+  valve_task_valve_pulse_entity_key:
+    type: string
+  valve_task_duration_entity_key:
+    type: string
+  valve_task_time_rule_enable_entity_key:
+    type: string
+  valve_task_pulse_rule_enable_entity_key:
+    type: string
+resources:
+  workflow:
+    type: workflow
+    device_id: {{ Parameters.device_id }}
+    name: UC511阀门{{ Parameters.index }}状态控制
+    data:
+      nodes:
+        - id: node_0
+          type: trigger
+          componentName: trigger
+          position:
+            'x': 0
+            'y': 0
+          data:
+            nodeName: Trigger
+            parameters:
+              entityConfigs:
+                - identify: param_0
+                  name: 阀门{{ Parameters.index }}状态控制
+                  type: BOOLEAN
+                  required: true
+        - id: node_1
+          type: assigner
+          componentName: entityAssigner
+          position:
+            'x': 288
+            'y': 0
+          data:
+            nodeName: Entity Assigner
+            parameters:
+              exchangePayload:
+                {{ Parameters.valve_task_valve_status_entity_key }}: '#{properties.node_0[''param_0'']}'
+                {{ Parameters.valve_task_sequence_id_entity_key }}: '0'
+                {{ Parameters.valve_task_valve_pulse_entity_key }}: '0'
+                {{ Parameters.valve_task_duration_entity_key }}: '0'
+                {{ Parameters.valve_task_time_rule_enable_entity_key }}: false
+                {{ Parameters.valve_task_pulse_rule_enable_entity_key }}: false
+      edges:
+        - id: edge_0
+          type: addable
+          source: node_0
+          target: node_1
+          data: {}

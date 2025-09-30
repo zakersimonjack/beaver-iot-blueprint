@@ -297,42 +297,42 @@ definition:
         type: boolean
         entity_mapping: stop_transmit
 initial_entities:
-  - name: IPSO Version
+  - name: IPSO 版本
     type: property
     access_mod: R
     value_type: string
     attributes:
       max_length: 6
     identifier: ipso_version
-  - name: Hardware Version
+  - name: 硬件版本
     type: property
     access_mod: R
     value_type: string
     attributes:
       max_length: 6
     identifier: hardware_version
-  - name: Firmware Version
+  - name: 固件版本
     type: property
     access_mod: R
     value_type: string
     attributes:
       max_length: 6
     identifier: firmware_version
-  - name: TSL Version
+  - name: 物模型版本
     type: property
     access_mod: R
     value_type: string
     attributes:
       max_length: 6
     identifier: tsl_version
-  - name: SN
+  - name: 设备SN码
     type: property
     access_mod: R
     value_type: string
     attributes:
       max_length: 16
     identifier: sn
-  - name: LoRaWAN Class Type
+  - name: LoRaWAN 工作模式
     type: property
     access_mod: R
     value_type: long
@@ -343,73 +343,75 @@ initial_entities:
         '2': Class C
         '3': Class CtoB
     identifier: lorawan_class
-  - name: Reset Event
+  - name: 重置事件
     type: property
     access_mod: R
     value_type: long
     attributes:
       enum:
-        '0': normal
-        '1': reset
+        '0': 正常
+        '1': 重置
     identifier: reset_event
-  - name: Device Status
+  - name: 设备状态
     type: property
     access_mod: R
     value_type: boolean
     attributes:
       enum:
-        'false': 'off'
-        'true': 'on'
+        'false': '关机'
+        'true': '开机'
     identifier: device_status
-  - name: Battery
+  - name: 电池电量
     type: property
     access_mod: R
     value_type: long
     attributes:
       unit: '%'
     identifier: battery
-  - name: Valve 1
+  - name: 阀门1状态
     type: property
     access_mod: R
     value_type: boolean
     attributes:
       enum:
-        'false': close
-        'true': open
+        'false': 关闭
+        'true': 开启
     identifier: valve_1
-  - name: Valve 1 Delay Control Result
+    important: 1
+  - name: 阀门1延迟控制结果
     type: property
     access_mod: R
     value_type: boolean
     attributes:
       enum:
-        'false': success
-        'true': failed
+        'false': 成功
+        'true': 失败
     identifier: valve_1_result
-  - name: Valve 2
+  - name: 阀门2状态
     type: property
     access_mod: R
     value_type: boolean
     attributes:
       enum:
-        'false': close
-        'true': open
+        'false': 关闭
+        'true': 开启
     identifier: valve_2
-  - name: Valve 2 Delay Control Result
+    important: 2
+  - name: 阀门2延迟控制状态
     type: property
     access_mod: R
     value_type: boolean
     attributes:
       enum:
-        'false': success
-        'true': failed
+        'false': 成功
+        'true': 失败
     identifier: valve_2_result
-  - name: Valve 1 pulse
+  - name: 阀门1脉冲计数
     type: property
     access_mod: RW
     value_type: long
     identifier: valve_1_pulse
-  - name: Valve 2 pulse
+  - name: 阀门2脉冲计数
     type: property
     access_mod: RW
     value_type: long
@@ -420,105 +422,105 @@ initial_entities:
     value_type: boolean
     attributes:
       enum:
-        'false': 'off'
-        'true': 'on'
+        'false': '关'
+        'true': '开'
     identifier: gpio_1
   - name: GPIO 2
     type: property
     access_mod: R
-    value_type: boolean
+    value_type: boolean 
     attributes:
       enum:
-        'false': 'off'
-        'true': 'on'
+        'false': '关'
+        'true': '开'
     identifier: gpio_2
-  - name: Pressure
+  - name: 压力值
     type: property
     access_mod: R
     value_type: long
     attributes:
       unit: kPa
     identifier: pressure
-  - name: Pressure Sensor Status
+  - name: 压力传感器状态
     type: property
     access_mod: R
     value_type: long
     attributes:
       enum:
-        '1': sensor error
+        '1': 传感器错误
     identifier: pressure_sensor_status
-  - name: Custom Message
+  - name: 自定义消息
     type: property
     access_mod: R
     value_type: string
     attributes:
       max_length: 8
     identifier: custom_message
-  - name: Reboot
+  - name: 重启
     type: service
     access_mod: W
     value_type: boolean
     attributes:
       enum:
-        'false': 'no'
-        'true': 'yes'
+        'false': '否'
+        'true': '是'
     identifier: reboot
-  - name: Report Status
+  - name: 上报状态
     type: service
     access_mod: W
     value_type: boolean
     attributes:
       enum:
-        'false': 'no'
-        'true': 'yes'
+        'false': '否'
+        'true': '是'
     identifier: report_status
-  - name: Sync Time
+  - name: 同步时间
     type: service
     access_mod: W
     value_type: boolean
     attributes:
       enum:
-        'false': 'no'
-        'true': 'yes'
+        'false': '否'
+        'true': '是'
     identifier: sync_time
-  - name: Collection Interval
+  - name: 采集周期
     type: property
     access_mod: RW
     value_type: long
     attributes:
       unit: s
     identifier: collection_interval
-  - name: Report Interval
+  - name: 上报周期
     type: property
     access_mod: RW
     value_type: long
     attributes:
       unit: s
     identifier: report_interval
-  - name: Retransmit Enable
+  - name: 重传功能
     type: property
     access_mod: RW
     value_type: boolean
     attributes:
       enum:
-        'false': disable
-        'true': enable
+        'false': 禁用
+        'true': 启用
     identifier: retransmit_enable
-  - name: Retransmit Interval
+  - name: 重传周期
     type: property
     access_mod: RW
     value_type: long
     attributes:
       unit: s
     identifier: retransmit_interval
-  - name: Resend Interval
+  - name: 重新发送周期
     type: property
     access_mod: RW
     value_type: long
     attributes:
       unit: s
     identifier: resend_interval
-  - name: Time Zone
+  - name: 时区
     type: property
     access_mod: RW
     value_type: long
@@ -562,7 +564,7 @@ initial_entities:
         '-20': UTC-2
         '-10': UTC-1
     identifier: time_zone
-  - name: Sync Time Type
+  - name: 同步时间类型
     type: property
     access_mod: RW
     value_type: long
@@ -572,32 +574,32 @@ initial_entities:
         '2': v1.0.3
         '3': v1.1.0
     identifier: sync_time_type
-  - name: D2D Key
+  - name: D2D 键
     type: property
     access_mod: RW
     value_type: string
     attributes:
       max_length: 16
     identifier: d2d_key
-  - name: D2D Enable
+  - name: D2D 功能
     type: property
     access_mod: RW
     value_type: boolean
     attributes:
       enum:
-        'false': disable
-        'true': enable
+        'false': 禁用
+        'true': 启用
     identifier: d2d_enable
-  - name: Response Enable
+  - name: 应答功能
     type: property
     access_mod: RW
     value_type: boolean
     attributes:
       enum:
-        'false': disable
-        'true': enable
+        'false': 禁用
+        'true': 启用
     identifier: response_enable
-  - name: Class A Response Time
+  - name: Class A应答时间
     type: property
     access_mod: RW
     value_type: long
@@ -605,202 +607,264 @@ initial_entities:
       unit: s
     identifier: class_a_response_time
   - identifier: valve_1_task
-    name: Valve 1 Task (Time Rule Enable)
+    name: 阀门1控制
     type: property
     access_mod: RW
     value_type: object
     children:
-      - name: Valve 1 Task (Time Rule Enable)
+      - name: 基于持续时间控制
         value_type: boolean
         attributes:
           enum:
-            'false': disable
-            'true': enable
+            'false': 禁用
+            'true': 启用
         identifier: time_rule_enable
-      - name: Valve 1 Task (Pulse Rule Enable)
+      - name: 基于脉冲流量控制
         value_type: boolean
         attributes:
           enum:
-            'false': disable
-            'true': enable
+            'false': 禁用
+            'true': 启用
         identifier: pulse_rule_enable
-      - name: Valve 1 Task (Sequence ID)
+      - name: 控制顺序ID
         value_type: long
         identifier: sequence_id
-      - name: Valve 1 Task (Duration)
+      - name: 持续时间
         value_type: long
         attributes:
           unit: s
         identifier: duration
-      - name: Valve 1 Task (Valve Status)
+      - name: 开关控制
         value_type: boolean
         attributes:
           enum:
-            'false': close
-            'true': open
+            'false': 关闭
+            'true': 开启
         identifier: valve_status
-      - name: Valve 1 Task (Valve Pulse)
+      - name: 脉冲流量
         value_type: long
         identifier: valve_pulse
   - identifier: valve_2_task
-    name: Valve 2 Task (Time Rule Enable)
+    name: 阀门2控制
     type: property
     access_mod: RW
     value_type: object
     children:
-      - name: Valve 2 Task (Time Rule Enable)
+      - name: 基于持续时间控制
         value_type: boolean
         attributes:
           enum:
-            'false': disable
-            'true': enable
+            'false': 禁用
+            'true': 启用
         identifier: time_rule_enable
-      - name: Valve 2 Task (Pulse Rule Enable)
+      - name: 基于脉冲流量控制
         value_type: boolean
         attributes:
           enum:
-            'false': disable
-            'true': enable
+            'false': 禁用
+            'true': 启用
         identifier: pulse_rule_enable
-      - name: Valve 2 Task (Sequence ID)
+      - name: 控制顺序ID
         value_type: long
         identifier: sequence_id
-      - name: Valve 2 Task (Duration)
+      - name: 持续时间
         value_type: long
         attributes:
           unit: s
         identifier: duration
-      - name: Valve 2 Task (Valve Status)
+      - name: 开关控制
         value_type: boolean
         attributes:
           enum:
-            'false': close
-            'true': open
+            'false': 关闭
+            'true': 开启
         identifier: valve_status
-      - name: Valve 2 Task (Valve Pulse)
+      - name: 脉冲流量
         value_type: long
         identifier: valve_pulse
-  - name: Clear Valve 1 Pulse
+  - name: 清除阀门1脉冲计数
     type: service
     access_mod: W
     value_type: boolean
     attributes:
       enum:
-        'false': 'no'
-        'true': 'yes'
+        'false': '否'
+        'true': '是'
     identifier: clear_valve_1_pulse
-  - name: Clear Valve 2 Pulse
+  - name: 清除阀门2脉冲计数
     type: service
     access_mod: W
     value_type: boolean
     attributes:
       enum:
-        'false': 'no'
-        'true': 'yes'
+        'false': '否'
+        'true': '是'
     identifier: clear_valve_2_pulse
   - identifier: pulse_filter_config
-    name: Pulse Filter Config (Mode)
+    name: 滤波设置
     type: property
     access_mod: RW
     value_type: object
     children:
-      - name: Pulse Filter Config (Mode)
+      - name: 模式
         value_type: long
         attributes:
           enum:
-            '1': hardware
-            '2': software
+            '1': 硬件
+            '2': 软件
         identifier: mode
-      - name: Pulse Filter Config (Time)
+      - name: 时间
         value_type: long
         attributes:
           unit: s
         identifier: time
-  - name: GPIO Jitter Time
+  - name: GPIO抖动时间
     type: property
     access_mod: RW
     value_type: long
     identifier: gpio_jitter_time
   - identifier: valve_power_supply_config
-    name: Valve Power Supply Config (Counts)
+    name: 阀门供电设置
     type: property
     access_mod: RW
     value_type: object
     children:
-      - name: Valve Power Supply Config (Counts)
+      - name: 计数器
         value_type: long
         identifier: counts
-      - name: Valve Power Supply Config (Control Pulse Time)
+      - name: 控制流量时间
         value_type: long
         attributes:
           unit: ms
         identifier: control_pulse_time
-      - name: Valve Power Supply Config (Power Time)
+      - name: 供电时长
         value_type: long
         attributes:
           unit: ms
         identifier: power_time
   - identifier: pressure_calibration_settings
-    name: Pressure Calibration (Enable)
+    name: 压力校准设置
     type: property
     access_mod: RW
     value_type: object
     children:
-      - name: Pressure Calibration (Enable)
+      - name: 状态
         value_type: boolean
         attributes:
           enum:
-            'false': disable
-            'true': enable
+            'false': 禁用
+            'true': 启用
         identifier: enable
-      - name: Pressure Calibration (Calibration Value)
+      - name: 校准值
         value_type: long
         attributes:
           unit: kPa
         identifier: calibration_value
-  - name: History Enable
+  - name: 历史数据存储
     type: property
     access_mod: RW
     value_type: boolean
     attributes:
       enum:
-        'false': disable
-        'true': enable
+        'false': 禁用
+        'true': 启用
     identifier: history_enable
-  - name: Clear History
+  - name: 清除历史数据
     type: service
     access_mod: W
     value_type: boolean
     attributes:
       enum:
-        'false': 'no'
-        'true': 'yes'
+        'false': '否'
+        'true': '是'
     identifier: clear_history
   - identifier: fetch_history
-    name: Fetch History (Start Time)
+    name: 历史数据查询
     type: service
     access_mod: W
     value_type: object
     children:
-      - name: Fetch History (Start Time)
+      - name: 开始时间
         value_type: long
         attributes:
           unit: s
         identifier: start_time
-      - name: Fetch History (End Time)
+      - name: 结束时间
         value_type: long
         attributes:
           unit: s
         identifier: end_time
-  - name: Stop Transmit
+  - name: 停止重传
     type: service
     access_mod: W
     value_type: boolean
     attributes:
       enum:
-        'false': 'no'
-        'true': 'yes'
+        'false': '否'
+        'true': '是'
     identifier: stop_transmit
 codec:
   id: default
   ref: uc511_di/codec/device-codec.yaml
+blueprint:
+  dir: uc511_di/blueprint/
+  values:
+    device_id:
+      type: device_id
+    sn_entity_id:
+      type: entity_id
+      identifier: sn
+    battery_entity_id:
+      type: entity_id
+      identifier: battery
+    report_interval_entity_id:
+      type: entity_id
+      identifier: report_interval
+    valve_1_entity_id:
+      type: entity_id
+      identifier: valve_1
+    valve_1_pulse_entity_id:
+      type: entity_id
+      identifier: valve_1_pulse
+    valve_2_entity_id:
+      type: entity_id
+      identifier: valve_2
+    valve_2_pulse_entity_id:
+      type: entity_id
+      identifier: valve_2_pulse
+    valve_1_task_valve_status_entity_key:
+      type: entity_key
+      identifier: valve_1_task.valve_status
+    valve_1_task_sequence_id_entity_key:
+      type: entity_key
+      identifier: valve_1_task.sequence_id
+    valve_1_task_valve_pulse_entity_key:
+      type: entity_key
+      identifier: valve_1_task.valve_pulse
+    valve_1_task_duration_entity_key:
+      type: entity_key
+      identifier: valve_1_task.duration
+    valve_1_task_time_rule_enable_entity_key:
+      type: entity_key
+      identifier: valve_1_task.time_rule_enable
+    valve_1_task_pulse_rule_enable_entity_key:
+      type: entity_key
+      identifier: valve_1_task.pulse_rule_enable
+    valve_2_task_valve_status_entity_key:
+      type: entity_key
+      identifier: valve_2_task.valve_status
+    valve_2_task_sequence_id_entity_key:
+      type: entity_key
+      identifier: valve_2_task.sequence_id
+    valve_2_task_valve_pulse_entity_key:
+      type: entity_key
+      identifier: valve_2_task.valve_pulse
+    valve_2_task_duration_entity_key:
+      type: entity_key
+      identifier: valve_2_task.duration
+    valve_2_task_time_rule_enable_entity_key:
+      type: entity_key
+      identifier: valve_2_task.time_rule_enable
+    valve_2_task_pulse_rule_enable_entity_key:
+      type: entity_key
+      identifier: valve_2_task.pulse_rule_enable

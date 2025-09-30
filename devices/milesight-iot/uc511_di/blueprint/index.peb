@@ -1,0 +1,79 @@
+version: 1.0
+type: template
+parameters:
+  device_id:
+    type: string
+  sn_entity_id:
+    type: string
+  battery_entity_id:
+    type: string
+  report_interval_entity_id:
+    type: string
+  valve_1_entity_id:
+    type: string
+  valve_1_pulse_entity_id:
+    type: string
+  valve_2_entity_id:
+    type: string
+  valve_2_pulse_entity_id:
+    type: string
+  valve_1_task_valve_status_entity_key:
+    type: string
+  valve_1_task_sequence_id_entity_key:
+    type: string
+  valve_1_task_valve_pulse_entity_key:
+    type: string
+  valve_1_task_duration_entity_key:
+    type: string
+  valve_1_task_time_rule_enable_entity_key:
+    type: string
+  valve_1_task_pulse_rule_enable_entity_key:
+    type: string
+  valve_2_task_valve_status_entity_key:
+    type: string
+  valve_2_task_sequence_id_entity_key:
+    type: string
+  valve_2_task_valve_pulse_entity_key:
+    type: string
+  valve_2_task_duration_entity_key:
+    type: string
+  valve_2_task_time_rule_enable_entity_key:
+    type: string
+  valve_2_task_pulse_rule_enable_entity_key:
+    type: string
+include:
+  device_canvas:
+    template: device_canvas.peb
+    parameters:
+      device_id: {{ Parameters.device_id }}
+      sn_entity_id: {{ Parameters.sn_entity_id }}
+      battery_entity_id: {{ Parameters.battery_entity_id }}
+      report_interval_entity_id: {{ Parameters.report_interval_entity_id }}
+      valve_1_entity_id: {{ Parameters.valve_1_entity_id }}
+      valve_1_pulse_entity_id: {{ Parameters.valve_1_pulse_entity_id }}
+      valve_1_control_entity_id: !ref include.valve_controller1.template.resources.workflow.trigger.id
+      valve_2_entity_id: {{ Parameters.valve_2_entity_id }}
+      valve_2_pulse_entity_id: {{ Parameters.valve_2_pulse_entity_id }}
+      valve_2_control_entity_id: !ref include.valve_controller2.template.resources.workflow.trigger.id
+  valve_controller1:
+    template: valve_controller.peb
+    parameters:
+      device_id: {{ Parameters.device_id }}
+      index: 1
+      valve_task_valve_status_entity_key: {{ Parameters.valve_1_task_valve_status_entity_key }}
+      valve_task_sequence_id_entity_key: {{ Parameters.valve_1_task_sequence_id_entity_key }}
+      valve_task_valve_pulse_entity_key: {{ Parameters.valve_1_task_valve_pulse_entity_key }}
+      valve_task_duration_entity_key: {{ Parameters.valve_1_task_duration_entity_key }}
+      valve_task_time_rule_enable_entity_key: {{ Parameters.valve_1_task_time_rule_enable_entity_key }}
+      valve_task_pulse_rule_enable_entity_key: {{ Parameters.valve_1_task_pulse_rule_enable_entity_key }}
+  valve_controller2:
+    template: valve_controller.peb
+    parameters:
+      device_id: {{ Parameters.device_id }}
+      index: 2
+      valve_task_valve_status_entity_key: {{ Parameters.valve_2_task_valve_status_entity_key }}
+      valve_task_sequence_id_entity_key: {{ Parameters.valve_2_task_sequence_id_entity_key }}
+      valve_task_valve_pulse_entity_key: {{ Parameters.valve_2_task_valve_pulse_entity_key }}
+      valve_task_duration_entity_key: {{ Parameters.valve_2_task_duration_entity_key }}
+      valve_task_time_rule_enable_entity_key: {{ Parameters.valve_2_task_time_rule_enable_entity_key }}
+      valve_task_pulse_rule_enable_entity_key: {{ Parameters.valve_2_task_pulse_rule_enable_entity_key }}
