@@ -39,7 +39,7 @@ resources:
             maxRow: 12
             maxCol: 12
             config:
-              label: 图片
+              label: UC521
               dataType: url
               url: 'https://beaver-iot.s3.cn-north-1.amazonaws.com.cn/UC521.png'
             pos:

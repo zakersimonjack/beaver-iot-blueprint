@@ -20,7 +20,7 @@ resources:
     name: UC521阀门{{ Parameters.index }}状态控制
     data:
       metadata:
-        deviceImportantEntity: !convert [!ref parameters.index, integer]
+        deviceImportantEntity: {{ Parameters.index }}
       nodes:
         - id: node_0
           type: trigger
@@ -33,8 +33,8 @@ resources:
             parameters:
               entityConfigs:
                 - identify: param_0
-                  name: 阀门{{ Parameters.index }}状态控制
-                  type: BOOLEAN
+                  name: 阀门{{ Parameters.index }}开度
+                  type: LONG
                   required: true
         - id: node_1
           type: assigner

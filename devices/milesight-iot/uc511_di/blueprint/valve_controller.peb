@@ -24,7 +24,7 @@ resources:
     name: UC511阀门{{ Parameters.index }}状态控制
     data:
       metadata:
-        deviceImportantEntity: !convert [!ref parameters.index, integer]
+        deviceImportantEntity: {{ Parameters.index }}
       nodes:
         - id: node_0
           type: trigger
