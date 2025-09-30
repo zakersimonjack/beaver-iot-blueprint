@@ -19,6 +19,8 @@ resources:
     device_id: {{ Parameters.device_id }}
     name: UC521阀门{{ Parameters.index }}状态控制
     data:
+      metadata:
+        deviceImportantEntity: !convert [!ref parameters.index, integer]
       nodes:
         - id: node_0
           type: trigger
