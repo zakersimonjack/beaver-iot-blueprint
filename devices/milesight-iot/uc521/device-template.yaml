@@ -675,6 +675,8 @@ initial_entities:
     access_mod: R
     value_type: long
     attributes:
+      min: 0
+      max: 100
       unit: '%'
     identifier: battery
   - name: Valve 1 Type
@@ -1073,6 +1075,10 @@ initial_entities:
       - name: Valve 1 Task (Valve Opening)
         value_type: long
         identifier: valve_opening
+        attributes:
+          min: 0
+          max: 100
+          unit: '%'
       - name: Valve 1 Task (Time)
         value_type: long
         attributes:
@@ -1096,6 +1102,10 @@ initial_entities:
       - name: Valve 2 Task (Valve Opening)
         value_type: long
         identifier: valve_opening
+        attributes:
+          min: 0
+          max: 100
+          unit: '%'
       - name: Valve 2 Task (Time)
         value_type: long
         attributes:
