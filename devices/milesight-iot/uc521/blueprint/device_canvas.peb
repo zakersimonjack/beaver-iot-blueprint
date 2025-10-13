@@ -13,13 +13,13 @@ parameters:
     type: string
   valve_1_pulse_entity_id:
     type: string
-  valve_1_control_entity_id:
+  valve_1_task_entity_id:
     type: string
   valve_2_opening_entity_id:
     type: string
   valve_2_pulse_entity_id:
     type: string
-  valve_2_control_entity_id:
+  valve_2_task_entity_id:
     type: string
 resources:
   device_canvas:
@@ -120,7 +120,7 @@ resources:
             maxCol: 2
             config:
               entity:
-                value: !ref parameters.valve_1_control_entity_id
+                value: !ref parameters.valve_1_task_entity_id
               label: 阀门1控制
               appearanceIcon:
                 icon: IotSolenoidValveOpenIcon
@@ -247,7 +247,7 @@ resources:
             maxCol: 2
             config:
               entity:
-                value: !ref parameters.valve_2_control_entity_id
+                value: !ref parameters.valve_2_task_entity_id
               label: 阀门2控制
               appearanceIcon:
                 icon: IotSolenoidValveOpenIcon
@@ -345,8 +345,8 @@ resources:
       entity_ids:
         - !ref parameters.sn_entity_id
         - !ref parameters.battery_entity_id
-        - !ref parameters.valve_1_control_entity_id
-        - !ref parameters.valve_2_control_entity_id
+        - !ref parameters.valve_1_task_entity_id
+        - !ref parameters.valve_2_task_entity_id
         - !ref parameters.valve_1_opening_entity_id
         - !ref parameters.valve_1_pulse_entity_id
         - !ref parameters.valve_2_opening_entity_id

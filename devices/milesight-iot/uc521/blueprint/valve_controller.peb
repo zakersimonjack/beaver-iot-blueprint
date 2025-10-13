@@ -17,7 +17,7 @@ resources:
   workflow:
     type: workflow
     device_id: {{ Parameters.device_id }}
-    name: UC521阀门{{ Parameters.index }}状态控制
+    name: 阀门{{ Parameters.index }}开度控制
     data:
       metadata:
         deviceImportantEntity: {{ Parameters.index }}
