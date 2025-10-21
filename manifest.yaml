@@ -1,5 +1,5 @@
 version: 1.5
-minimum_required_beaver_iot_version: 1.2.4
+minimum_required_beaver_iot_version: 2.0.0
 author: beaver-iot
 device_vendor_index: devices/vendors.yaml
 solution_index: solutions/solutions.yaml
