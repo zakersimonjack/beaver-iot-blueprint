@@ -974,6 +974,8 @@ initial_entities:
     access_mod: RW
     value_type: long
     attributes:
+      min: 1
+      max: 1440
       unit: min
     identifier: report_interval
   - name: 同步时间

@@ -497,6 +497,8 @@ initial_entities:
     access_mod: RW
     value_type: long
     attributes:
+      min: 60
+      max: 64800
       unit: s
     identifier: report_interval
   - name: 重传功能
