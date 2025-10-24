@@ -50,12 +50,12 @@ resources:
                   color: '#40c776ff'
                 OFFLINE:
                   icon: CancelIcon
-                  color: '#919191ff'
+                  color: '#6b7785ff'
             pos:
               w: 2
-              h: 2
-              'x': 2
-              'y': 1
+              h: 1
+              'x': 4
+              'y': 0
               minW: 1
               maxW: 2
               minH: 1
@@ -132,9 +132,9 @@ resources:
                 icon: IotBatteryIcon
                 color: '#40c776ff'
             pos:
-              w: 4
+              w: 2
               h: 1
-              'x': 4
+              'x': 6
               'y': 0
               minW: 1
               maxW: 4
@@ -192,9 +192,9 @@ resources:
                   color: '#8e66ffff'
             pos:
               w: 2
-              h: 1
-              'x': 8
-              'y': 0
+              h: 2
+              'x': 6
+              'y': 1
               minW: 1
               maxW: 2
               minH: 1
@@ -218,7 +218,7 @@ resources:
             pos:
               w: 2
               h: 2
-              'x': 4
+              'x': 2
               'y': 1
               minW: 1
               maxW: 2
@@ -249,7 +249,7 @@ resources:
                   color: '#8e66ffff'
             pos:
               w: 2
-              h: 1
+              h: 2
               'x': 8
               'y': 1
               minW: 1
@@ -275,7 +275,7 @@ resources:
             pos:
               w: 2
               h: 2
-              'x': 6
+              'x': 4
               'y': 1
               minW: 1
               maxW: 2
@@ -328,7 +328,7 @@ resources:
               w: 2
               h: 1
               'x': 8
-              'y': 2
+              'y': 0
               minW: 1
               maxW: 2
               minH: 1
