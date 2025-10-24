@@ -3,6 +3,8 @@ type: template
 parameters:
   device_id:
     type: string
+  device_key:
+    type: string
   sn_entity_id:
     type: string
   battery_entity_id:
@@ -50,6 +52,7 @@ include:
     template: device_canvas.peb
     parameters:
       device_id: {{ Parameters.device_id }}
+      status_entity_id: {{ find_entity(Parameters.device_key + '.@status').id }}
       sn_entity_id: {{ Parameters.sn_entity_id }}
       battery_entity_id: {{ Parameters.battery_entity_id }}
       report_interval_entity_id: {{ Parameters.report_interval_entity_id }}

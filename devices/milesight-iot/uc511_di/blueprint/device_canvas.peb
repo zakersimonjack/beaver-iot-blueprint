@@ -3,6 +3,8 @@ type: template
 parameters:
   device_id:
     type: string
+  status_entity_id:
+    type: string
   sn_entity_id:
     type: string
   battery_entity_id:
@@ -30,6 +32,38 @@ resources:
       widgets:
         - data:
             class: data_card
+            type: dataCard
+            name: Card
+            defaultRow: 1
+            defaultCol: 2
+            minRow: 1
+            minCol: 1
+            maxCol: 2
+            maxRow: 2
+            config:
+              entity:
+                value: !ref parameters.status_entity_id
+              title: 设备状态
+              icons:
+                ONLINE:
+                  icon: CheckCircleIcon
+                  color: '#40c776ff'
+                OFFLINE:
+                  icon: CancelIcon
+                  color: '#919191ff'
+            pos:
+              w: 2
+              h: 2
+              'x': 2
+              'y': 1
+              minW: 1
+              maxW: 2
+              minH: 1
+              maxH: 2
+              moved: false
+              static: false
+        - data:
+            class: data_card
             type: image
             name: image
             defaultRow: 4
@@ -44,7 +78,7 @@ resources:
               url: 'https://beaver-iot.s3.cn-north-1.amazonaws.com.cn/UC511.png'
             pos:
               w: 2
-              h: 2
+              h: 3
               minW: 2
               minH: 1
               'y': 0
@@ -58,7 +92,7 @@ resources:
             type: dataCard
             name: Card
             defaultRow: 1
-            defaultCol: 1
+            defaultCol: 2
             minRow: 1
             minCol: 1
             maxCol: 2
@@ -98,10 +132,10 @@ resources:
                 icon: IotBatteryIcon
                 color: '#40c776ff'
             pos:
-              w: 2
+              w: 4
               h: 1
-              'x': 2
-              'y': 1
+              'x': 4
+              'y': 0
               minW: 1
               maxW: 4
               minH: 1
@@ -113,7 +147,7 @@ resources:
             type: trigger
             name: Trigger
             defaultRow: 1
-            defaultCol: 1
+            defaultCol: 2
             minRow: 1
             minCol: 1
             maxRow: 2
@@ -140,7 +174,7 @@ resources:
             type: dataCard
             name: Card
             defaultRow: 1
-            defaultCol: 1
+            defaultCol: 2
             minRow: 1
             minCol: 1
             maxCol: 2
@@ -159,7 +193,7 @@ resources:
             pos:
               w: 2
               h: 1
-              'x': 4
+              'x': 8
               'y': 0
               minW: 1
               maxW: 2
@@ -172,7 +206,7 @@ resources:
             type: dataCard
             name: Card
             defaultRow: 1
-            defaultCol: 1
+            defaultCol: 2
             minRow: 1
             minCol: 1
             maxCol: 2
@@ -183,9 +217,9 @@ resources:
               title: 阀门1瞬时流量
             pos:
               w: 2
-              h: 1
-              'x': 6
-              'y': 0
+              h: 2
+              'x': 4
+              'y': 1
               minW: 1
               maxW: 2
               minH: 1
@@ -197,7 +231,7 @@ resources:
             type: dataCard
             name: Card
             defaultRow: 1
-            defaultCol: 1
+            defaultCol: 2
             minRow: 1
             minCol: 1
             maxCol: 2
@@ -216,7 +250,7 @@ resources:
             pos:
               w: 2
               h: 1
-              'x': 4
+              'x': 8
               'y': 1
               minW: 1
               maxW: 2
@@ -229,7 +263,7 @@ resources:
             type: dataCard
             name: Card
             defaultRow: 1
-            defaultCol: 1
+            defaultCol: 2
             minRow: 1
             minCol: 1
             maxCol: 2
@@ -240,7 +274,7 @@ resources:
               title: 阀门2瞬时流量
             pos:
               w: 2
-              h: 1
+              h: 2
               'x': 6
               'y': 1
               minW: 1
@@ -254,7 +288,7 @@ resources:
             type: trigger
             name: Trigger
             defaultRow: 1
-            defaultCol: 1
+            defaultCol: 2
             minRow: 1
             minCol: 1
             maxRow: 2
@@ -281,7 +315,7 @@ resources:
             type: dataCard
             name: Card
             defaultRow: 1
-            defaultCol: 1
+            defaultCol: 2
             minRow: 1
             minCol: 1
             maxCol: 2
@@ -294,7 +328,7 @@ resources:
               w: 2
               h: 1
               'x': 8
-              'y': 0
+              'y': 2
               minW: 1
               maxW: 2
               minH: 1
@@ -320,8 +354,8 @@ resources:
             pos:
               w: 2
               h: 1
-              'x': 8
-              'y': 1
+              'x': 10
+              'y': 2
               minW: 1
               maxW: 2
               minH: 1
@@ -334,7 +368,7 @@ resources:
             name: Area
             defaultRow: 2
             defaultCol: 2
-            minRow: 1
+            minRow: 2
             minCol: 2
             maxRow: 4
             maxCol: 12
@@ -349,14 +383,15 @@ resources:
               w: 12
               h: 4
               'x': 0
-              'y': 2
+              'y': 3
               minW: 2
               maxW: 12
-              minH: 1
+              minH: 2
               maxH: 4
               moved: false
               static: false
       entity_ids:
+        - !ref parameters.status_entity_id
         - !ref parameters.sn_entity_id
         - !ref parameters.battery_entity_id
         - !ref parameters.valve_1_task_entity_id

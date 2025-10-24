@@ -815,6 +815,8 @@ blueprint:
   values:
     device_id:
       type: device_id
+    device_key:
+      type: device_key
     sn_entity_id:
       type: entity_id
       identifier: sn
