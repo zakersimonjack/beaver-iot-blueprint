@@ -162,7 +162,7 @@ resources:
               w: 2
               h: 1
               'x': 10
-              'y': 0
+              'y': 1
               minW: 1
               maxW: 2
               minH: 1
@@ -289,7 +289,7 @@ resources:
               w: 2
               h: 1
               'x': 10
-              'y': 1
+              'y': 2
               minW: 1
               maxW: 2
               minH: 1
@@ -341,7 +341,7 @@ resources:
               w: 2
               h: 1
               'x': 10
-              'y': 2
+              'y': 0
               minW: 1
               maxW: 2
               minH: 1
