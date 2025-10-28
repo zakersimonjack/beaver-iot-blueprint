@@ -5,4 +5,3 @@ models:
   - id: uc521
     name: UC521
     template: uc521/device-template.yaml
-  
