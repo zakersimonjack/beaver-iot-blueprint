@@ -1955,14 +1955,12 @@ initial_entities:
     access_mod: W
     value_type: object
     children:
-      - &ref_0
-        name: Fetch History (Start Time)
+      - name: Fetch History (Start Time)
         value_type: long
         attributes:
           unit: s
         identifier: start_time
-      - &ref_1
-        name: Fetch History (End Time)
+      - name: Fetch History (End Time)
         value_type: long
         attributes:
           unit: s
@@ -1980,8 +1978,16 @@ initial_entities:
             'false': 'no'
             'true': 'yes'
         identifier: stop_transmit_history
-      - *ref_0
-      - *ref_1
+      - name: Fetch History (Start Time)
+        value_type: long
+        attributes:
+          unit: s
+        identifier: start_time
+      - name: Fetch History (End Time)
+        value_type: long
+        attributes:
+          unit: s
+        identifier: end_time
   - name: Clear History
     type: service
     access_mod: W
