@@ -812,6 +812,9 @@ definition:
       - key: target_temperature_dual_enable
         type: boolean
         entity_mapping: target_temperature_dual_enable
+      - key: current_temperature_control_mode
+        type: long
+        entity_mapping: current_temperature_control_mode
 initial_entities:
   - name: IPSO Version
     type: property
@@ -2138,6 +2141,17 @@ initial_entities:
         'false': disable
         'true': enable
     identifier: target_temperature_dual_enable
+  - name: Temperature Control Mode
+    type: service
+    access_mod: W
+    value_type: long
+    attributes:
+      enum:
+        '0': heat
+        '1': em heat
+        '2': cool
+        '3': auto
+    identifier: current_temperature_control_mode
 codec:
   id: default
   ref: wt201_v2/codec/device-codec.yaml

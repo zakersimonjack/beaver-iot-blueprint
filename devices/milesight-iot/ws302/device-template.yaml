@@ -41,15 +41,69 @@ definition:
       - key: time_weight
         type: long
         entity_mapping: time_weight
-      - key: la
+      - key: LZeq
         type: double
-        entity_mapping: la
-      - key: laeq
+        entity_mapping: LZeq
+      - key: LZI
         type: double
-        entity_mapping: laeq
-      - key: lafmax
+        entity_mapping: LZI
+      - key: LZImax
         type: double
-        entity_mapping: lafmax
+        entity_mapping: LZImax
+      - key: LZF
+        type: double
+        entity_mapping: LZF
+      - key: LZFmax
+        type: double
+        entity_mapping: LZFmax
+      - key: LZS
+        type: double
+        entity_mapping: LZS
+      - key: LZSmax
+        type: double
+        entity_mapping: LZSmax
+      - key: LAeq
+        type: double
+        entity_mapping: LAeq
+      - key: LAI
+        type: double
+        entity_mapping: LAI
+      - key: LAImax
+        type: double
+        entity_mapping: LAImax
+      - key: LAF
+        type: double
+        entity_mapping: LAF
+      - key: LAFmax
+        type: double
+        entity_mapping: LAFmax
+      - key: LAS
+        type: double
+        entity_mapping: LAS
+      - key: LASmax
+        type: double
+        entity_mapping: LASmax
+      - key: LCeq
+        type: double
+        entity_mapping: LCeq
+      - key: LCI
+        type: double
+        entity_mapping: LCI
+      - key: LCImax
+        type: double
+        entity_mapping: LCImax
+      - key: LCF
+        type: double
+        entity_mapping: LCF
+      - key: LCFmax
+        type: double
+        entity_mapping: LCFmax
+      - key: LCS
+        type: double
+        entity_mapping: LCS
+      - key: LCSmax
+        type: double
+        entity_mapping: LCSmax
       - key: time_zone
         type: long
         entity_mapping: time_zone
@@ -156,27 +210,153 @@ initial_entities:
     access_mod: R
     value_type: long
     identifier: time_weight
-  - name: LA
+  - name: LZeq
     type: property
     access_mod: R
     value_type: double
     attributes:
       unit: dBA
-    identifier: la
+    identifier: LZeq
+  - name: LZI
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LZI
+  - name: LZImax
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LZImax
+  - name: LZF
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LZF
+  - name: LZFmax
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LZFmax
+  - name: LZS
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LZS
+  - name: LZSmax
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LZSmax
   - name: LAeq
     type: property
     access_mod: R
     value_type: double
     attributes:
       unit: dBA
-    identifier: laeq
+    identifier: LAeq
+  - name: LAI
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LAI
+  - name: LAImax
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LAImax
+  - name: LAF
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LAF
   - name: LAFmax
     type: property
     access_mod: R
     value_type: double
     attributes:
       unit: dBA
-    identifier: lafmax
+    identifier: LAFmax
+  - name: LAS
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LAS
+  - name: LASmax
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LASmax
+  - name: LCeq
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LCeq
+  - name: LCI
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LCI
+  - name: LCImax
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LCImax
+  - name: LCF
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LCF
+  - name: LCFmax
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LCFmax
+  - name: LCS
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LCS
+  - name: LCSmax
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: dBA
+    identifier: LCSmax
   - name: Reboot
     type: service
     access_mod: W

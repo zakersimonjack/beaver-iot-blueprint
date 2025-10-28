@@ -300,7 +300,7 @@ models:
     name: WS515
     template: ws515/device-template.yaml
   - id: ws513_w11
-    name: WS513
+    name: WS513(W11)
     template: ws513_w11/device-template.yaml
   - id: ws523
     name: WS523
